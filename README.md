@@ -3,6 +3,15 @@
 
 # Running coverage
 
+__Install Tools__
+
+```
+cargo install cargo-tarpaulin
+sudo apt install lcov # for genhtml
+```
+
+__Coverage Generation__
+
 Copy desired examples to run from `timely/_examples/` to `timely/examples`
 
 ```
@@ -11,7 +20,7 @@ genhtml target/cov1/lcov.info --output-directory target/cov2 && \
 xdg-open target/cov2/index.html
 ```
 
-
+# Timely
 
 
 Timely dataflow is a low-latency cyclic dataflow computational model, introduced in the paper [Naiad: a timely dataflow system](http://dl.acm.org/citation.cfm?id=2522738). This project is an extended and more modular implementation of timely dataflow in Rust.
