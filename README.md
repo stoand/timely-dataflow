@@ -1,4 +1,18 @@
-# Timely Dataflow #
+# Timely Dataflow (MODIFIED FOR COVERAGE CHECKING)
+
+
+# Running coverage
+
+Copy desired examples to run from `timely/_examples/` to `timely/examples`
+
+```
+cargo tarpaulin -o Lcov --run-types Examples --output-dir target/cov1 && \
+genhtml target/cov1/lcov.info --output-directory target/cov2 && \
+xdg-open target/cov2/index.html
+```
+
+
+
 
 Timely dataflow is a low-latency cyclic dataflow computational model, introduced in the paper [Naiad: a timely dataflow system](http://dl.acm.org/citation.cfm?id=2522738). This project is an extended and more modular implementation of timely dataflow in Rust.
 

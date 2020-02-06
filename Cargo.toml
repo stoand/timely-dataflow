@@ -2,7 +2,7 @@
 members = [
     "bytes",
     "communication",
-    "kafkaesque",
+    # "kafkaesque",
     "logging",
 #    "sort",
     "timely",

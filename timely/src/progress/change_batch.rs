@@ -73,7 +73,7 @@ impl<T:Ord> ChangeBatch<T> {
     /// batch.update(17, 1);
     /// assert!(!batch.is_empty());
     ///```
-    #[inline]
+    // #[inline]
     pub fn update(&mut self, item: T, value: i64) {
         self.updates.push((item, value));
         self.maintain_bounds();
