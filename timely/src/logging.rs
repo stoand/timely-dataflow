@@ -9,7 +9,7 @@ pub type TimelyLogger = Logger<TimelyEvent>;
 /// Logger for timely dataflow progress events (the "timely/progress" log stream).
 pub type TimelyProgressLogger = Logger<TimelyProgressEvent>;
 
-use std::time::Duration;
+use instant::Duration;
 use crate::dataflow::operators::capture::{Event, EventPusher};
 
 /// Logs events as a timely stream, with progress statements.

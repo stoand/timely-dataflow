@@ -81,7 +81,7 @@ fn main() {
 
         let mut rng: SmallRng = SeedableRng::seed_from_u64(index as u64);
 
-        let timer = std::time::Instant::now();
+        let timer = instant::Instant::now();
 
         let mut sent = 0;
         while sent < (vals / peers) {

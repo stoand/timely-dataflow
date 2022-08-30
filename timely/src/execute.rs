@@ -243,8 +243,8 @@ where
                     let writer = EventWriterCore::new(stream);
                     let mut logger = BatchLogger::new(writer);
                     result = Some(crate::logging_core::Logger::new(
-                        ::std::time::Instant::now(),
-                        ::std::time::Duration::default(),
+                        ::instant::Instant::now(),
+                        ::instant::Duration::default(),
                         events_setup,
                         move |time, data| logger.publish_batch(time, data)
                     ));

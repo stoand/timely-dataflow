@@ -87,6 +87,7 @@ extern crate abomonation;
 
 extern crate timely_bytes as bytes;
 extern crate timely_logging as logging_core;
+extern crate instant;
 
 pub mod allocator;
 pub mod networking;

@@ -45,7 +45,7 @@ fn main() {
                     let mut edge_vec = Vec::new();
                     let mut rank_vec = Vec::new();
 
-                    let timer = ::std::time::Instant::now();
+                    let timer = ::instant::Instant::now();
 
                     move |input1, input2, output| {
 

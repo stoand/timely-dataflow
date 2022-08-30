@@ -2,7 +2,7 @@
 
 use std::rc::Rc;
 use std::cell::RefCell;
-use std::time::Duration;
+use instant::Duration;
 use std::collections::VecDeque;
 
 pub use self::thread::Thread;

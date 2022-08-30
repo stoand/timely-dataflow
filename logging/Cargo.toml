@@ -11,3 +11,6 @@ homepage = "https://github.com/TimelyDataflow/timely-dataflow"
 repository = "https://github.com/TimelyDataflow/timely-dataflow.git"
 keywords = ["timely", "dataflow", "logging"]
 license = "MIT"
+
+[dependencies]
+instant = { version = "0.1.12", features = ["wasm-bindgen"] }

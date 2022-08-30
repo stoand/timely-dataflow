@@ -2,7 +2,7 @@
 
 use std::rc::Rc;
 use std::cell::RefCell;
-use std::time::{Instant, Duration};
+use instant::{Instant, Duration};
 use std::collections::VecDeque;
 
 use crate::{communication::Allocate, ExchangeData, PartialOrder};
@@ -63,7 +63,7 @@ impl<T: ExchangeData> Sequencer<T> {
     /// # Examples
     ///
     /// ```rust
-    /// use std::time::{Instant, Duration};
+    /// use instant::{Instant, Duration};
     ///
     /// use timely::Config;
     /// use timely::synchronization::Sequencer;

@@ -15,7 +15,7 @@ fn main() {
         let index = worker.index();
         let peers = worker.peers();
 
-        let timer = std::time::Instant::now();
+        let timer = instant::Instant::now();
 
         let mut input = InputHandle::new();
         let mut probe = ProbeHandle::new();

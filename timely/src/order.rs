@@ -53,8 +53,8 @@ macro_rules! implement_total {
     )
 }
 
-implement_partial!(u8, u16, u32, u64, u128, usize, i8, i16, i32, i64, i128, isize, (), ::std::time::Duration,);
-implement_total!(u8, u16, u32, u64, u128, usize, i8, i16, i32, i64, i128, isize, (), ::std::time::Duration,);
+implement_partial!(u8, u16, u32, u64, u128, usize, i8, i16, i32, i64, i128, isize, (), instant::Duration,);
+implement_total!(u8, u16, u32, u64, u128, usize, i8, i16, i32, i64, i128, isize, (), instant::Duration,);
 
 pub use product::Product;
 /// A pair of timestamps, partially ordered by the product order.

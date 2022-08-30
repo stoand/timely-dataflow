@@ -71,7 +71,7 @@ impl<T: Abomonation, D: Abomonation> EventPusherCore<T, D> for EventProducerCore
         // println!("sending {:?} bytes", self.buffer.len());
         self.producer.send::<(),[u8]>(BaseRecord::to(self.topic.as_str()).payload(&self.buffer[..])).unwrap();
         self.counter.fetch_add(1, Ordering::SeqCst);
-        self.producer.poll(std::time::Duration::from_millis(0));
+        self.producer.poll(instant::Duration::from_millis(0));
         self.buffer.clear();
     }
 }
@@ -79,7 +79,7 @@ impl<T: Abomonation, D: Abomonation> EventPusherCore<T, D> for EventProducerCore
 impl<T, D> Drop for EventProducerCore<T, D> {
     fn drop(&mut self) {
         while self.counter.load(Ordering::SeqCst) > 0 {
-            self.producer.poll(std::time::Duration::from_millis(10));
+            self.producer.poll(instant::Duration::from_millis(10));
         }
     }
 }
@@ -110,7 +110,7 @@ impl<T, D> EventConsumerCore<T, D> {
 
 impl<T: Abomonation, D: Abomonation> EventIteratorCore<T, D> for EventConsumerCore<T, D> {
     fn next(&mut self) -> Option<&EventCore<T, D>> {
-        if let Some(result) = self.consumer.poll(std::time::Duration::from_millis(0)) {
+        if let Some(result) = self.consumer.poll(instant::Duration::from_millis(0)) {
             match result {
                 Ok(message) =>  {
                     self.buffer.clear();

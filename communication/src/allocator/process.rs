@@ -4,7 +4,7 @@ use std::rc::Rc;
 use std::cell::RefCell;
 use std::sync::{Arc, Mutex};
 use std::any::Any;
-use std::time::Duration;
+use instant::Duration;
 use std::collections::{HashMap, VecDeque};
 use crossbeam_channel::{Sender, Receiver};
 

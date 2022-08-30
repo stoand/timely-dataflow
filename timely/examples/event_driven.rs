@@ -7,7 +7,7 @@ fn main() {
     // initializes and runs a timely dataflow.
     timely::execute_from_args(std::env::args(), |worker| {
 
-        let timer = std::time::Instant::now();
+        let timer = instant::Instant::now();
 
         let mut args = std::env::args();
         args.next();

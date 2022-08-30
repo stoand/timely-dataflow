@@ -1,6 +1,6 @@
 extern crate timely;
 
-use std::time::{Instant, Duration};
+use instant2::{Instant, Duration};
 
 use timely::Config;
 use timely::synchronization::Sequencer;

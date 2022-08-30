@@ -240,7 +240,7 @@ impl Allocate for ProcessAllocator {
     fn events(&self) -> &Rc<RefCell<VecDeque<(usize, Event)>>> {
         &self.events
     }
-    fn await_events(&self, duration: Option<std::time::Duration>) {
+    fn await_events(&self, duration: Option<instant::Duration>) {
         if self.events.borrow().is_empty() {
             if let Some(duration) = duration {
                 std::thread::park_timeout(duration);

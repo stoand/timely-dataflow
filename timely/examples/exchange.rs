@@ -20,7 +20,7 @@ fn main() {
         );
 
 
-        let timer = std::time::Instant::now();
+        let timer = instant::Instant::now();
 
         for round in 0 .. rounds {
 

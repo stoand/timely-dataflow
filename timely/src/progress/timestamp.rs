@@ -87,15 +87,15 @@ macro_rules! implement_timestamp_add {
 
 implement_timestamp_add!(usize, u128, u64, u32, u16, u8, isize, i128, i64, i32, i16, i8,);
 
-impl Timestamp for ::std::time::Duration {
-    type Summary = ::std::time::Duration;
-    fn minimum() -> Self { ::std::time::Duration::new(0, 0) }
+impl Timestamp for ::instant::Duration {
+    type Summary = ::instant::Duration;
+    fn minimum() -> Self { ::instant::Duration::new(0, 0) }
 }
-impl PathSummary<::std::time::Duration> for ::std::time::Duration {
+impl PathSummary<::instant::Duration> for ::instant::Duration {
     #[inline]
-    fn results_in(&self, src: &::std::time::Duration) -> Option<::std::time::Duration> { self.checked_add(*src) }
+    fn results_in(&self, src: &::instant::Duration) -> Option<::instant::Duration> { self.checked_add(*src) }
     #[inline]
-    fn followed_by(&self, other: &::std::time::Duration) -> Option<::std::time::Duration> { self.checked_add(*other) }
+    fn followed_by(&self, other: &::instant::Duration) -> Option<::instant::Duration> { self.checked_add(*other) }
 }
 
 pub use self::refines::Refines;
@@ -147,5 +147,5 @@ mod refines {
         )
     }
 
-    implement_refines_empty!(usize, u128, u64, u32, u16, u8, isize, i128, i64, i32, i16, i8, ::std::time::Duration,);
+    implement_refines_empty!(usize, u128, u64, u32, u16, u8, isize, i128, i64, i32, i16, i8, ::instant::Duration,);
 }

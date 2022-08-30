@@ -117,7 +117,7 @@ where
                 // Repeatedly interrogate Kafka for [u8] messages.
                 // Cease only when Kafka stops returning new data.
                 // Could cease earlier, if we had a better policy.
-                while let Some(result) = consumer.poll(std::time::Duration::from_millis(0)) {
+                while let Some(result) = consumer.poll(instant::Duration::from_millis(0)) {
                     // If valid data back from Kafka
                     if let Ok(message) = result {
                         // Attempt to interpret bytes as utf8  ...

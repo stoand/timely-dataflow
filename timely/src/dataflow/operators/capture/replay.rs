@@ -52,20 +52,20 @@ use crate::Container;
 pub trait Replay<T: Timestamp, C> : Sized {
     /// Replays `self` into the provided scope, as a `Stream<S, D>`.
     fn replay_into<S: Scope<Timestamp=T>>(self, scope: &mut S) -> StreamCore<S, C> {
-        self.replay_core(scope, Some(std::time::Duration::new(0, 0)))
+        self.replay_core(scope, Some(instant::Duration::new(0, 0)))
     }
     /// Replays `self` into the provided scope, as a `Stream<S, D>'.
     ///
     /// The `period` argument allows the specification of a re-activation period, where the operator
     /// will re-activate itself every so often. The `None` argument instructs the operator not to
     /// re-activate itself.us
-    fn replay_core<S: Scope<Timestamp=T>>(self, scope: &mut S, period: Option<std::time::Duration>) -> StreamCore<S, C>;
+    fn replay_core<S: Scope<Timestamp=T>>(self, scope: &mut S, period: Option<instant::Duration>) -> StreamCore<S, C>;
 }
 
 impl<T: Timestamp, C: Container, I> Replay<T, C> for I
 where I : IntoIterator,
       <I as IntoIterator>::Item: EventIteratorCore<T, C>+'static {
-    fn replay_core<S: Scope<Timestamp=T>>(self, scope: &mut S, period: Option<std::time::Duration>) -> StreamCore<S, C>{
+    fn replay_core<S: Scope<Timestamp=T>>(self, scope: &mut S, period: Option<instant::Duration>) -> StreamCore<S, C>{
 
         let mut builder = OperatorBuilder::new("Replay".to_owned(), scope.clone());
 

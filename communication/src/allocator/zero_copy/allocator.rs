@@ -272,7 +272,7 @@ impl<A: Allocate> Allocate for TcpAllocator<A> {
     fn events(&self) -> &Rc<RefCell<VecDeque<(usize, Event)>>> {
         self.inner.events()
     }
-    fn await_events(&self, duration: Option<std::time::Duration>) {
+    fn await_events(&self, duration: Option<instant::Duration>) {
         self.inner.await_events(duration);
     }
 }

@@ -1,7 +1,7 @@
 extern crate timely;
 
 use std::fmt::{Display, Formatter};
-use std::time::{Duration, Instant};
+use instant::{Duration, Instant};
 
 use criterion::black_box;
 use criterion::*;

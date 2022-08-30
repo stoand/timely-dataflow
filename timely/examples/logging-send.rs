@@ -71,7 +71,7 @@ fn main() {
 
         let input_logger = worker.log_register().get::<()>("input").expect("Input logger absent");
 
-        let timer = std::time::Instant::now();
+        let timer = instant::Instant::now();
 
         for round in 0 .. rounds {
 

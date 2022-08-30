@@ -34,7 +34,7 @@ fn main() {
         // holds the bfs parent of each node, or u32::max_value() if unset.
         let mut done = vec![u32::max_value(); 1 + (nodes / peers)];
 
-        let start = std::time::Instant::now();
+        let start = instant::Instant::now();
 
         worker.dataflow::<usize,_,_>(move |scope| {
 

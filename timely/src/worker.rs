@@ -4,7 +4,7 @@ use std::rc::Rc;
 use std::cell::{RefCell, RefMut};
 use std::any::Any;
 use std::str::FromStr;
-use std::time::{Instant, Duration};
+use instant::{Instant, Duration};
 use std::collections::HashMap;
 use std::collections::hash_map::Entry;
 use std::sync::Arc;
@@ -318,7 +318,7 @@ impl<A: Allocate> Worker<A> {
     /// ```
     /// timely::execute_from_args(::std::env::args(), |worker| {
     ///
-    ///     use std::time::Duration;
+    ///     use instant::Duration;
     ///     use timely::dataflow::operators::{ToStream, Inspect};
     ///
     ///     worker.dataflow::<usize,_,_>(|scope| {

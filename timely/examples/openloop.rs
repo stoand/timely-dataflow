@@ -18,7 +18,7 @@ fn main() {
         // re-synchronize all workers (account for start-up).
         timely::synchronization::Barrier::new(worker).wait();
 
-        let timer = std::time::Instant::now();
+        let timer = instant::Instant::now();
 
         let mut input = InputHandle::new();
         let mut probe = ProbeHandle::new();
